@@ -1,0 +1,30 @@
+/* ...
+*= require flatpickr
+*= require flatpickr/themes/material_red
+*/
+
+@import "bootstrap";
+
+// 全体
+.graph-container {
+  @extend .container-fluid;
+  max-width: 768px;
+  padding: 1rem;
+}
+
+// ********** 次を追加 **********
+// フラッシュ
+div.alert-notice {
+  @extend .alert-info;
+}
+
+div.alert-alert {
+  @extend .alert-danger;
+}
+
+// モーダル
+
+button.close {
+  overflow : hidden;
+  outline : none;
+}

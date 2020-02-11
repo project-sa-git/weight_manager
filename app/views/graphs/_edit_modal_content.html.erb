@@ -1,0 +1,21 @@
+<%= form_with model: Graph.new, method: :patch do |form| %>
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text">日付</span>
+    </div>
+    <%= form.text_field :date, class: 'form-control bg-white', id: "edit-calendar" %>
+  </div>
+  <small>記録が存在しない日付は選択できません</small>
+  <div class="input-group mt-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">体重</span>
+    </div>
+    <%= form.number_field :weight, class: 'form-control', id: "edit-weight", in: 10.0..200.0, step: '0.1', required: true %>
+    <div class="ml-2 my-auto">kg</div>
+  </div>
+  <small>小数第1位まで記録できます</small>
+  <div class="form-group mt-3">
+    <%= form.submit '修正', class: 'btn btn-primary btn-block mb-4', id: 'edit-button' %>
+    <%= form.submit '削除', name: '_destroy', class: 'btn btn-danger btn-block', id: 'destroy-button', data: { confirm: "本当に記録を削除しますか？" } %>
+  </div>
+<% end %>
