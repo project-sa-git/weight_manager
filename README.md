@@ -1,68 +1,30 @@
-# README
+# Weight_Manager
+![weight_figure](https://user-images.githubusercontent.com/50135286/76485408-d5365580-645f-11ea-8842-182fe6f73fe9.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+体重を記録してグラフで表示してくれるアプリです。
 
-Things you may want to cover:
+# アプリ概要
 
-* Ruby version
+カレンダーからその日の体重データを記録しグラフで視覚化する事で、健康意識に役立てるアプリです。
 
-* System dependencies
+# デモ
 
-* Configuration
+デモ機能制作中です。
+本来登録ユーザの情報を表示するアプリですが、デモページ向けにサンプルユーザー（user_id:1）のデータを表示する仕様を予定しています
 
-* Database creation
+# 機能
+* ユーザー登録、ログイン機能(Devise)
+* グラフ描写(Chart.js)
+* カレンダー機能(flatpickr)
 
-* Database initialization
+# 本番環境
 
-* How to run the test suite
+実装中
 
-* Services (job queues, cache servers, search engines, etc.)
+(Herokuデプロイ予定)
 
-* Deployment instructions
+# ライセンス
 
-* ...
+This project is licensed free.
 
-
-
-# Ruby on Rails チュートリアルのサンプルアプリケーション
-
-これは、次の教材で作られたサンプルアプリケーションです。   
-[*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
-[Michael Hartl](http://www.michaelhartl.com/) 著
-
-## ライセンス
-
-[Ruby on Rails チュートリアル](https://railstutorial.jp/)内にある
-ソースコードはMITライセンスとBeerwareライセンスのもとで公開されています。
-詳細は [LICENSE.md](LICENSE.md) をご覧ください。
-
-## 使い方
-
-このアプリケーションを動かす場合は、まずはリポジトリを手元にクローンしてください。
-その後、次のコマンドで必要になる RubyGems をインストールします。
-
-```
-$ bundle install --without production
-```
-
-その後、データベースへのマイグレーションを実行します。
-
-```
-$ rails db:migrate
-```
-
-最後に、テストを実行してうまく動いているかどうか確認してください。
-
-```
-$ rails test
-```
-
-テストが無事に通ったら、Railsサーバーを立ち上げる準備が整っているはずです。
-
-```
-$ rails server
-```
-
-詳しくは、[*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
-を参考にしてください。
+ご自由にご利用ください
