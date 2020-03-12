@@ -1,16 +1,13 @@
 document.addEventListener('turbolinks:load', () => {
 
-  // ********** 以下を追加 **********
   if (document.getElementById('start-calendar')) {
     // 他
   }
-  // ********** 以上を追加 **********
 
   // '2020-01-12'のような文字列から，Javascriptの日付オブジェクトを取得する関数
   // setHoursを使用しないと，時差の影響で0時にならないため注意！
   const convertDate = (date) => new Date(new Date(date).setHours(0, 0, 0, 0))
   
-  // ********** 以下を追加 **********
   // 日付の古い方・新しい方を取得する関数
   const minDate = (date1, date2) => (date1 < date2) ? date1 : date2
 //   console.log('こんにちは');
@@ -19,13 +16,10 @@ document.addEventListener('turbolinks:load', () => {
     // データの初日・最終日
     const START_DATE = convertDate(gon.weight_records[0].date)
     const END_DATE = convertDate(gon.weight_records[gon.weight_records.length - 1].date)
-  // ********** 以上を追加 **********
 
-  // ********** 以下を追加 **********
     // カレンダーの日本語化
     flatpickr.localize(flatpickr.l10ns.ja)
 
-    // ********** 以下を追加 **********
     const drawGraphForPeriod = () => {
       let from = convertDate(document.getElementById('start-calendar').value)
       let to = convertDate(document.getElementById('end-calendar').value)
@@ -36,7 +30,6 @@ document.addEventListener('turbolinks:load', () => {
           drawGraph(from, to)
       }
   }
-  // ********** 以上を追加 **********
 
     const periodCalendarOption = {
         // スマートフォンでもカレンダーに「flatpickr」を使用
@@ -44,16 +37,13 @@ document.addEventListener('turbolinks:load', () => {
         // 選択できる期間を設定
         minDate: START_DATE,
         maxDate: END_DATE,
-         // ********** 以下を編集 **********
         // 日付選択後のイベント
         onChange: drawGraphForPeriod
-        // ********** 以上を編集 **********
     }
 
     // カレンダー
     const startCalendarFlatpickr = flatpickr('#start-calendar', periodCalendarOption)
     const endCalendarFlatpickr = flatpickr('#end-calendar', periodCalendarOption)
-    // ********** 以上を追加 **********
 
     // 新規記録用のカレンダー
     flatpickr('#new-calendar', {
@@ -90,24 +80,18 @@ document.addEventListener('turbolinks:load', () => {
   // グラフを描く場所を取得
   const chartWeightContext = document.getElementById("chart-weight").getContext('2d')
 
-  // ********** 以下を追加 **********
-  // グラフ（ drawGraph 関数の外で変数宣言をしなければならない!）
   let chartWeight
-  // ********** 以上を追加 **********
 
   
-  // ********** 以下を追加 **********
   // 引数の日付から今日までのグラフを描く関数
   const drawGraphToToday = (from) => {
     // データが存在する範囲に修正
     from = maxDate(from, START_DATE)
     let to = minDate(TODAY, END_DATE)
     drawGraph(from, to)
-    // ********** 以下を追加 **********
             // フォームの開始日・終了日を変更する
             startCalendarFlatpickr.setDate(from)
             endCalendarFlatpickr.setDate(to)
-        // ********** 以上を追加 **********
   }
   
   // 過去◯週間のグラフを描くボタン
@@ -126,7 +110,6 @@ document.addEventListener('turbolinks:load', () => {
   document.getElementById('three-months-button').addEventListener('click', () => {
       drawGraphToToday(THREE_MONTHS_AGO)
   })
-  // ********** 以上を追加 **********
 
 
   // 期間を指定してグラフを描く
@@ -187,18 +170,14 @@ document.addEventListener('turbolinks:load', () => {
         chartWeight.options = weightOption
         chartWeight.update()
     }
-    // ********** 以上を編集 **********
   }
 
-  // ********** 次を編集 **********
   // グラフの初期表示
   // drawGraph(A_WEEK_AGO, TODAY)
   drawGraphToToday(A_WEEK_AGO)
-  // ********** 以上を編集 **********
 
   // // ● カレンダー
   //
-  // // 選択できない日付データ（自由に変更していただいてOKです）
   // const disable_dates = ['2019-12-10', '2019-12-20', '2019-12-30', '2020-01-10', '2020-1-20', '2020-01-30']
   //
   // // カレンダーの日本語化
