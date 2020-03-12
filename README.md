@@ -1,27 +1,34 @@
 # Weight_Manager
-![weight_figure](https://user-images.githubusercontent.com/50135286/76485408-d5365580-645f-11ea-8842-182fe6f73fe9.png)
+
+<img width="1437" alt="weight_figure" src="https://user-images.githubusercontent.com/50135286/76489147-de78ef80-646a-11ea-88a2-675270166fb3.png">
 
 体重を記録してグラフで表示してくれるアプリです。
 
 # アプリ概要
 
-カレンダーからその日の体重データを記録しグラフで視覚化する事で、健康意識に役立てるアプリです。
+カレンダーから日付を選択して体重データを記録する事でグラフとして可視化され、健康意識に役立てるアプリです。
 
 # デモ
 
 デモ機能制作中です。
-本来登録ユーザの情報を表示するアプリですが、デモページ向けにサンプルユーザー（user_id:1）のデータを表示する仕様を予定しています
+本来登録ユーザの情報を表示するアプリですが、デモページ向けにサンプルユーザー（user_id:1）のデータ表示を予定しています
 
 # 機能
 * ユーザー登録、ログイン機能(Devise)
 * グラフ描写(Chart.js)
 * カレンダー機能(flatpickr)
+* 入力データの記録 & 削除
 
-# 本番環境
+# インストール
+```
+$ git clone https://github.com/project-sa-git/weight_manager.git
+$ cd weight_manager
+$ bundle install
+```
 
-実装中
+# その他
 
-(Herokuデプロイ予定)
+本番環境（Herokuデプロイ）実装中
 
 # ライセンス
 
