@@ -10,8 +10,10 @@
 
 # デモ
 
-デモ機能制作中です。
-本来登録ユーザの情報を表示するアプリですが、デモページ向けにサンプルユーザー（user_id:1）のデータ表示を予定しています
+Herokuを本番環境にデプロイしたものになります。
+https://weight-manager.herokuapp.com/
+
+※ ゲストユーザーでのログイン機能を実装中です
 
 # 機能
 * ユーザー登録、ログイン機能(Devise)
@@ -25,10 +27,6 @@ $ git clone https://github.com/project-sa-git/weight_manager.git
 $ cd weight_manager
 $ bundle install
 ```
-
-# その他
-
-本番環境（Herokuデプロイ）実装中
 
 # ライセンス
 
