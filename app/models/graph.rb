@@ -4,7 +4,6 @@ class Graph < ApplicationRecord
   validates :date, presence: true, uniqueness: { scope: :user_id }
   validates :weight, presence: true
 
-  # ********** 以下を追加 **********
   # そのままデータを取り出すと，日付が不連続なデータになるため，日付の連続したデータを作成する。
   def self.chart_data(user)
     graphs = user.graphs.order(date: :asc)
@@ -23,5 +22,4 @@ class Graph < ApplicationRecord
       { date: date, weight: weight }
     end
   end
-  # ********** 以上を追加 **********
 end
